@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/97/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdn.rawgit.com/josephg/noisejs/master/perlin.js"></script>
+
+    <title>Ejemplo de página de inicio</title>
+</head>
+<body>
+    <main>
+        <header class="header-top line">
+            <img src="./img/Logo.png">
+        </header>
+
+        <div class="links line line-vertical line-vertical-right">
+            <nav>
+                <a class="link link--mneme oh"><span class="reveal-text">Home</span></a>
+                <a class="link link--mneme oh"><span class="reveal-text">About us</span></a>
+                <a class="link link--mneme oh"><span class="reveal-text">Contact</span></a>
+            </nav>
+
+            <div id="menu">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+                
+        <h1 class="main-text line line-vertical line-vertical-right oh"><span class="reveal-text">information <br>that save <span class="gradient-text">lives</span></span></h1>
+
+        <span class="showcase-div line-vertical"><a class="showcase-text link link--mneme oh"><span class="reveal-text">Showcase</span></a></span>
+        
+        <p class="information-text line line-vertical line-vertical-right oh"><span class="reveal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel commodo nulla. Quisque a commodo dui. Phasellus varius, nunc at porta sodales, nisi magna luctus orci, nec condimentum ante orci quis ligula.</span></p>
+            
+        <div class="td-animation">
+            <div class="circle"><p><span>72%</span> <br>of life</p></div>
+            <canvas class="scene" id="bubble"></canvas>
+        </div>
+
+        <div class="right-part-top line line-vertical"></div>
+        <div class="right-part-center line line-vertical"></div>
+        <div class="right-part-bottom line-vertical"></div>
+    </main>
+</body>
+
+<script src="./js/main.js"></script>
+</html>

@@ -1,0 +1,299 @@
+/* cuepo de la página */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+main {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Cabecera */
+
+.header-top {
+    display: flex;
+    align-items: center;
+    padding-left: 20%;
+}
+
+.header-top img {
+    width: 91px;
+    height: 54px;
+}
+
+.links {
+    padding-right: 2em;
+    grid-area: links;
+    font-family: 'Poppins';
+    font-size: 18px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.links nav a {
+    overflow: hidden;
+    margin-left: 2em;
+}
+
+.links nav {
+    overflow: hidden;
+}
+
+#menu {
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    background-color: #210878;
+    border-radius: 10000px;
+}
+
+#menu div {
+    width: 60%;
+    height: 2px;
+    background-color: #FFFFFF;
+}
+
+#menu div:last-child {
+    margin-top: 6px;
+}
+
+/* Animación del círculo */
+
+.td-animation {
+    position: relative;
+    grid-area: img;
+    width: 100%;
+    height: 100%;
+}
+
+.scene {
+    width: 100%;
+    height: 100%;
+}
+
+.circle {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 45%;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 43%, rgba(198,228,255,1) 68%, rgba(242,204,255,1) 100%);
+    width: 220px;
+    height: 220px;
+    border-radius: 10000px;
+    z-index: 100000;
+}
+
+.circle p {
+    text-align: center;
+    position: relative;
+    top: 25%;
+    font-family: 'Poppins';
+    font-size: 1.2em;
+}
+
+.circle p span {
+    font-size: 3em;
+}
+
+/* Texto */
+.main-text {
+    position: relative;
+    font-family: 'Poppins';
+    grid-area: pagetittle;
+    padding: 1rem;
+    font-weight: 400;
+    font-size: 6rem;
+    line-height: 6.2rem;
+    text-transform: uppercase;
+}
+
+.gradient-text {
+    text-align: center;
+    
+    background: linear-gradient(-45deg, rgb(72, 28, 173) 20%, rgb(0, 17, 255) 40%, rgb(153, 0, 255) 60%, rgb(35, 128, 216) 80%);
+    background-size: 200% auto;
+    
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation: shine 2s linear infinite;
+  }
+
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+
+.showcase-div {
+    position: relative;
+    grid-area: viewcase;
+}
+
+.showcase-text {
+    position: absolute;
+    right: -20%;
+    bottom: 20%;
+    transform: rotate(-90deg);
+    font-family: 'Poppins';
+    font-size: 36px;
+    color: #21087E;
+}
+
+.information-text .reveal-text {
+    animation: reveal 1s 1.3s forwards;
+    left: -102%;
+}
+
+.showcase-text .reveal-text {
+    animation: reveal 1.2s 1.6s forwards;
+}
+
+.information-text {
+    font-family: 'Poppins';
+    padding: 1rem;
+    grid-area: info;
+    font-size: 18px;
+    line-height: 46px;
+}
+
+.reveal-text {
+    animation: reveal 1.2s cubic-bezier( 0.62, 0.01, 0.35, 1 ) 0.9s forwards;
+    position: relative;
+    left: -100%;
+}
+
+@keyframes reveal {
+    to {
+        left: 0;
+    }
+}
+
+/* Decoración final de las líneas */
+
+.right-part-top {
+    grid-area: parttop;
+}
+
+.right-part-center {
+    grid-area: partcenter;
+}
+
+.right-part-bottom {
+    grid-area: partbottom;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Grid */
+
+@media screen and (min-width: 60em){
+
+    main {
+        text-align: left;
+        padding: 0;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 40% 15% 35%;
+        grid-template-rows: 20vh min-content 1fr;
+        grid-template-areas:
+            "logo links links parttop"
+            "img pagetittle pagetittle partcenter"
+            "img viewcase info partbottom"
+    }
+
+    .line, .line-vertical, .line-vertical-right {
+		position: relative;
+	}
+
+    .line::after { 
+        content: ""; 
+        animation: animateLine 1s ease-in-out forwards; 
+        position: absolute; 
+        left: 0;
+        bottom: 0;
+        width: 0; 
+        height: 1px; 
+        background-color: #D8D8D8; 
+    } 
+     
+    @keyframes animateLine { 
+        0% { 
+            width: 0; 
+        } 
+     
+        100% { 
+            width: 100%; 
+        } 
+    } 
+
+    .line-vertical::before { 
+        content: ""; 
+        animation: animateLineVertical 1s ease-in-out forwards; 
+        position: absolute; 
+        left: 0;
+        top: 0;
+        width: 1px; 
+        height: 0; 
+        background-color: #D8D8D8; 
+    } 
+
+    @keyframes animateLineVertical { 
+        0% { 
+            height: 0; 
+        } 
+     
+        100% { 
+            height: 100%; 
+        } 
+    } 
+
+    .line-vertical-right::before { 
+        content: ""; 
+        animation: animateLineVerticalRight 1s ease-in-out forwards; 
+        position: absolute; 
+        right: 0;
+        top: 0;
+        width: 1px; 
+        height: 0;
+        background-color: #D8D8D8;  
+    } 
+
+     
+    @keyframes animateLineVerticalRight { 
+        0% { 
+            height: 0; 
+        } 
+     
+        100% { 
+            height: 100%; 
+        } 
+    } 
+
+}
+
+.oh {
+    overflow: hidden;
+}
+
